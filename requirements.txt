@@ -6,6 +6,7 @@ plotly
 seaborn
 scikit-learn
 catboost
+xgboost
 pymongo
 from_root
 dill
