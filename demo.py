@@ -17,3 +17,8 @@ from src.logger import logging
 # except Exception as e:
 #     logging.info(e)
 #     raise MyException(e, sys) from e
+
+from src.pipline.training_pipeline import TrainingPipeline
+
+training_pipeline = TrainingPipeline()
+training_pipeline.run_pipeline()
