@@ -54,6 +54,11 @@ class DataIngestion:
             dir_path = os.path.dirname(feature_store_file_path)
             os.makedirs(dir_path,exist_ok=True)
             logging.info(f"Saving exported data into feature store file path: {feature_store_file_path}")
+            # If MongoDB export included the internal '_id' field, drop it -- it's not part of the schema
+            if '_id' in dataframe.columns:
+                logging.info("Dropping MongoDB '_id' column from dataframe before saving feature store")
+                dataframe = dataframe.drop(columns=['_id'])
+
             dataframe.to_csv(feature_store_file_path,index = False, header = True)
             return dataframe
         except Exception as e:

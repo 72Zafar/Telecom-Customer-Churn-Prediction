@@ -26,7 +26,7 @@ columns:
   - Streaming Music: object
   - Unlimited Data: object
   - Contract: object
-  - Paperl ess Billing: object
+  - Paperless Billing: object
   - Payment Method: object
   - Monthly Charge: float
   - Total Charges: float
@@ -81,7 +81,7 @@ categorical_columns:
   - Churn Category
   - Churn Reason
 
-drop_columns: _id,Customer ID, City, Zip Code, Latitude, Longitude,Total Refunds, Total Extra Data Charges, Total Long Distance Charges,Total Revenue, Churn Category, Churn Reason
+drop_columns: Customer ID, City, Zip Code, Latitude, Longitude,Total Refunds, Total Extra Data Charges, Total Long Distance Charges,Total Revenue, Churn Category, Churn Reason
 
 # for data transformation
 num_feature:

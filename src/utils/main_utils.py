@@ -61,7 +61,8 @@ def load_numpy_array_data(file_path: str) -> np.array:
     """
     try:
         with open(file_path, 'rb') as file_obj:
-            return np.load(file_obj)
+            # allow_pickle=True to support loading object arrays if any were saved
+            return np.load(file_obj, allow_pickle=True)
     except Exception as e:
         raise MyException(e, sys) from e
 

@@ -26,3 +26,27 @@ class DataIngestionConfig:
 class DataValidationConfig:
     data_validation_dir: str = os.path.join(training_pipeline_config.artifacts_dir, DATA_VALIDATION_DIR_NAME)
     validation_report_file_path: str = os.path.join(data_validation_dir, DATA_VALIDATION_REPORT_FILE_NAME)
+
+@dataclass
+class DataTransformationConfig:
+    data_transformation_dir: str = os.path.join(training_pipeline_config.artifacts_dir, DATA_TRANSFORMATION_DIR_NAME)
+    transformed_train_file_path: str = os.path.join(data_transformation_dir, DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR, TRAIN_FILE_NAME.replace("csv", "npy"))
+    transformed_test_file_path: str = os.path.join(data_transformation_dir, DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR, TEST_FILE_NAME.replace("csv", "npy"))
+    transformed_object_file_path: str = os.path.join(data_transformation_dir, DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR, PREPOCESSING_OBJECT_FILE_NAME)
+    
+
+@dataclass
+class ModelTrainerConfig:
+    model_trainer_dir: str = os.path.join(training_pipeline_config.artifacts_dir, MODEL_TRAINER_DIR_NAME)
+    trained_model_file_path: str = os.path.join(model_trainer_dir, MODEL_TRAINER_TRAINED_MODEL_DIR, MODEL_FILE_NAME)
+    exceptted_accuracy: float = MODEL_TRAINER_EXPECTED_SCORE
+    # model_config_file_path: str = MODEL_TRAINER_MODEL_CONFIG_FILE_PATH 
+    _iterations = MODEL_TRAINER_ITERATIONS
+    _learning_rate = MODEL_TRAINER_LEARNING_RATE
+    _depth = MODEL_TRAINER_DEPTH
+    _l2_leaf_reg = MODEL_TRAINER_L2_LEAF_REG
+    _bagging_temperature = MODEL_TRAINER_BAGGING_TEMPERATURE
+    _border_count = MODEL_TRAINER_BORDER_COUNT
+    _random_seed = MODEL_TRAINER_RANDOM_SEED
+    _loss_function = MODEL_TRAINER_LOSS_FUNCTION
+    _verbose = MODEL_TRAINER_VERBOSE
