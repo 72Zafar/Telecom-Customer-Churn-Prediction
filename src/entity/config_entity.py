@@ -50,3 +50,19 @@ class ModelTrainerConfig:
     _random_seed = MODEL_TRAINER_RANDOM_SEED
     _loss_function = MODEL_TRAINER_LOSS_FUNCTION
     _verbose = MODEL_TRAINER_VERBOSE
+
+@dataclass 
+class ModelEvaluationConfig:
+    changed_threshold_score: float = MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE
+    bucket_name: str = MODEL_BUCKET_NAME
+    s3_model_key_path: str = MODEL_FILE_NAME
+
+@dataclass
+class ModelPusherConfig:
+    bucket_name: str = MODEL_BUCKET_NAME
+    s3_model_key_path: str = MODEL_FILE_NAME
+
+@dataclass 
+class ChurnPredictionCongig:
+    model_file_path: str = MODEL_FILE_NAME
+    MODEL_BUCKET_NAME: str = MODEL_BUCKET_NAME

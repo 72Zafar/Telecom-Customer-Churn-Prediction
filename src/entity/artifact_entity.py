@@ -32,3 +32,12 @@ class ClassificationMetricArtifact:
 class ModelTrainerArtifact:
     trained_model_file_path:str 
     metric_artifact:ClassificationMetricArtifact
+
+@dataclass 
+class ModelEvaluationArtifact:
+    trained_model_path:set
+
+@dataclass
+class ModelPusherArtifact:
+    bucket_name:str
+    s3_model_path:str
