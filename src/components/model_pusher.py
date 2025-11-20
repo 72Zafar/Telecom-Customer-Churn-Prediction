@@ -17,7 +17,7 @@ class ModelPusher:
         self.s3 = SimpleStorageService()
         self.model_evaluation_artifact = model_evaluation_artifact
         self.model_pusher_config = model_pusher_config
-        self.proj1_estimator = proj1Estimatoe(backet_name=self.model_pusher_config.bucket_name,
+        self.proj1_estimator = proj1Estimatoe(bucket_name=self.model_pusher_config.bucket_name,
                                               model_path = model_pusher_config.s3_model_key_path)
         
     def initiate_model_pusher(self)-> ModelPusherArtifact:

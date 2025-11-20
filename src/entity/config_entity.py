@@ -65,4 +65,4 @@ class ModelPusherConfig:
 @dataclass 
 class ChurnPredictionCongig:
     model_file_path: str = MODEL_FILE_NAME
-    MODEL_BUCKET_NAME: str = MODEL_BUCKET_NAME
+    model_bucket_name: str = MODEL_BUCKET_NAME

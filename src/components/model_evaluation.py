@@ -13,11 +13,9 @@ from typing import Optional
 from src.entity.s3_estimator import proj1Estimatoe
 from dataclasses import dataclass
 
-
-
 @dataclass
 class EvaluateModelResponse:
-    trained_model_path: str
+    trained_model_f1_score: float
     best_model_f1_score: float
     is_model_accepted: bool
     difference: float
@@ -86,21 +84,6 @@ class ModelEvaluation:
         except Exception as e:
             raise MyException(e, sys)
         
-    # Drop rows where "Customer Status" is "Joined"
-    # def _remove_joined_customers(self, dataframe: pd.DataFrame)-> pd.DataFrame:
-    #     """
-    #     Method Name : _remove_joined_customers
-    #     Description : This function is used to remove joined customers from dataframe.
-
-    #     Output: Returns dataframe without joined customers
-    #     On Failure : Write an exception log then raise an exception
-    #     """
-    #     try:
-    #         dataframe = dataframe[dataframe["Customer Status"] != "Joined"]
-
-    #         return dataframe
-    #     except Exception as e:
-    #         raise MyException(e, sys)
         
     def _remove_joined_customers(self, dataframe: pd.DataFrame)-> pd.DataFrame:
         try:
@@ -282,5 +265,3 @@ class ModelEvaluation:
         except Exception as e:
             raise MyException(e, sys)
     
-
-
